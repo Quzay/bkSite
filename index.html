@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel booking</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="content">
+          <header>
+              <div id="logo">
+                 <a href="index.html" title="На головну">
+                     <img src="img/Main_logo.ico" title="HotelBooking.com" alt="HotelBooking.com">
+                     <span>HotelBooking</span>
+                    </a>
+              </div>
+               <div id="about">
+                 <a href=""title="Взанти більше про реклами">Реклама</a>
+                  <a href=""title="Напиши нам">Зворотній зв'язок</a>
+               </div>
+             <div id="reg_auth">
+                   <a href=""title="Зайти в кабінет користувача">
+                     <div id="btn">
+                         Вхід
+                     </div>
+                  </a>
+                 <a href=""title="Зареєструватись на сайті">
+                      <div id="btn">
+                            Реєстрація
+                      </div>
+                    </a>
+                </div>
+            </header>
+            <nav>
+                <a href="">Hotels</a>
+                <a href="">Test1</a>
+                <a href="">Test2</a>
+                <a href="">Test3</a>
+                <a href="">Test4</a>
+                <div id="search">
+                    <span>Пошук</span>
+                    <i class="fas fa-search"></i>
+                </div>
+            </nav>
+        </div>
+        
+        <div class="background_search">
+            <img src="img/background_search.jpg" alt="Фон сайту">
+        </div>
+        <div class="container">
+            <h1>Готелі</h1>
+    
+            <div class="input-group">
+                <input type="text" id="city-input" placeholder="Введіть пункт призначення" autocomplete="off">
+            </div>
+            <div class="dropdown" id="city-dropdown">
+    
+                <div class="city-option" data-city="Lviv">
+                    <img src="img/lviv.jpg" alt="Львів"> Lviv (5)
+                </div>
+                <div class="dropdown-title">Райони Львова</div>
+                <div class="city-option" data-city="Lviv">
+                    <img src="img/galitsky.jpg" alt="Галицький район"> Галицький район (2)
+                </div>
+                <div class="city-option" data-city="Lviv">
+                    <img src="img/frank.jpg" alt="Личаківський район"> Личаківський район (3)
+                </div>
+                <div class="city-option" data-city="Lviv">
+                    <img src="img/zal.jpg" alt="Залізничний район"> Залізничний район (1)
+                </div>
+    
+                
+                <div class="dropdown-title">Райони Києва</div>
+                <div class="city-option" data-city="Kyiv">
+                    <img src="img/kyiv.jpg" alt="Київ"> Kyiv (5)
+                </div>
+                <div class="city-option" data-city="Kyiv">
+                    <img src="img/pechersk.jpg" alt="Печерський район"> Печерський район (3)
+                </div>
+                <div class="city-option" data-city="Kyiv">
+                    <img src="img/shevchenko.jpg" alt="Шевченківський район"> Шевченківський район (1)
+                </div>
+                <div class="city-option" data-city="Kyiv">
+                    <img src="img/obolon.jpg" alt="Оболонський район"> Оболонський район (1)
+                </div>
+            </div>
+    
+            <div class="input-group">
+                <input type="text" id="date-picker" placeholder="Оберіть дати">
+            </div>
+    
+            <div class="input-group">
+                <select>
+                    <option value="1">1 дорослий</option>
+                    <option value="2">2 дорослих</option>
+                    <option value="3">3 дорослих</option>
+                    <option value="4">4+ дорослих</option>
+                </select>
+            </div>
+    
+            <a href="catalog.html"><button class="search">Search</button></a>
+        </div>
+    
+        <script src="script.js"></script>
+
+
+
+        <footer>
+            <div id="site_name">
+                <span>HotelBooking</span> - найкраще бронювання
+            </div>
+            <div id="clear"></div>
+            <div id="fotter_menu">
+                <a href="" title="Більше про нас">Більше про нас</a>
+                <a href="" title="Підтримати проект">Підтримати проект</a>
+                <a href="" title="Написати лист">Написати лист</a>
+            </div>
+            <div id="rights">
+                <a href="">Всі права захищені &copy;2025</a>
+            </div>
+            <div id="social">
+                <a href="" title="Група телеграм"><i class="fa-brands fa-telegram" id="soc"></i></a>
+                <a href="" title="Група фейсбук"><i class="fa-brands fa-facebook"  id="soc"></i></a>
+                <a href="" title="Твіттер"><i class="fa-brands fa-twitter  "id="soc"></i></a>
+                <a href="" title="Ми в ютубі"><i class="fa-brands fa-youtube"  id="soc"></i></a>
+            </div>
+        </footer>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        $(document).scroll(function() {
+            if ($(document).scrollTop() > $('header').height() + 10) {
+                $('nav').addClass('fixed');
+            } else {
+                $('nav').removeClass('fixed');
+            }
+        });
+    </script>
+    
+</body>
+</html>
+
+
+
+

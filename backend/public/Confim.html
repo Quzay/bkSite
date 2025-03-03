@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Готель ARISTO</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="content">
+          <header>
+              <div id="logo">
+                 <a href="file:///D:/%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC/BookingSite//index.html" title="На головну">
+                     <img src="img/Main_logo.ico" title="HotelBooking.com" alt="HotelBooking.com">
+                     <span>HotelBooking</span>
+                    </a>
+              </div>
+               <div id="about">
+                 <a href=""title="Взанти більше про реклами">Реклама</a>
+                  <a href=""title="Напиши нам">Зворотній зв'язок</a>
+               </div>
+             <div id="reg_auth">
+                   <a href=""title="Зайти в кабінет користувача">
+                     <div id="btn">
+                         Вхід
+                     </div>
+                  </a>
+                 <a href=""title="Зареєструватись на сайті">
+                      <div id="btn">
+                            Реєстрація
+                      </div>
+                    </a>
+                </div>
+            </header>
+            <nav>
+                <a href="">Hotels</a>
+                <a href="">Test1</a>
+                <a href="">Test2</a>
+                <a href="">Test3</a>
+                <a href="">Test4</a>
+                <div id="search">
+                    <span>Пошук</span>
+                    <i class="fas fa-search"></i>
+                </div>
+            </nav>
+        </div>
+        <div class="containerr">
+            <h2>Підтвердити бронювання</h2>
+        
+            <h3>Інформація про гостя</h3>
+            <form id="booking-form" method="POST" action="/submit">
+                <label for="firstName">Ім'я</label>
+                <input type="text" id="firstName" name="firstName" placeholder="FirstName" required>
+        
+                <label for="secondName">Прізвище</label>
+                <input type="text" id="secondName" name="secondName" placeholder="SecondName" required>
+
+                <label for="phone">Телефон</label>
+                <input type="text" id="phone" name="phone" placeholder="Phone" required>
+        
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+
+                <h3>Політика конфіденційності</h3>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="guest" name="guest" checked>
+                    <label for="guest">Я і гість, і той, хто бронює</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="privacy" name="privacy" required>
+                    <label for="privacy">Я прочитав і приймаю Політику конфіденційності</label>
+                </div>
+                <button type="submit" class="button">CONFIRM</button>
+            </form>
+        </div>
+
+
+        
+
+
+
+
+
+
+        <footer>
+            <div id="site_name">
+                <span>HotelBooking</span> - найкраще бронювання
+            </div>
+            <div id="clear"></div>
+            <div id="fotter_menu">
+                <a href="" title="Більше про нас">Більше про нас</a>
+                <a href="" title="Підтримати проект">Підтримати проект</a>
+                <a href="" title="Написати лист">Написати лист</a>
+            </div>
+            <div id="rights">
+                <a href="">Всі права захищені &copy;2025</a>
+            </div>
+            <div id="social">
+                <a href="" title="Група телеграм"><i class="fa-brands fa-telegram" id="soc"></i></a>
+                <a href="" title="Група фейсбук"><i class="fa-brands fa-facebook"  id="soc"></i></a>
+                <a href="" title="Твіттер"><i class="fa-brands fa-twitter  "id="soc"></i></a>
+                <a href="" title="Ми в ютубі"><i class="fa-brands fa-youtube"  id="soc"></i></a>
+            </div>
+        </footer>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        $(document).scroll(function() {
+            if ($(document).scrollTop() > $('header').height() + 10) {
+                $('nav').addClass('fixed');
+            } else {
+                $('nav').removeClass('fixed');
+            }
+        });
+    </script>
+    <script>document.getElementById("booking-form").addEventListener("submit", async (event) => {
+        event.preventDefault();  // Не даємо браузеру перезавантажити сторінку при сабміті форми
+    
+        // Отримуємо значення з форми
+        const formData = new FormData(event.target);
+        const data = {
+            firstName: formData.get("firstName"),
+            secondName: formData.get("secondName"),
+            phone: formData.get("phone"),
+            email: formData.get("email"),
+        };
+    
+        try {
+            const response = await fetch("http://localhost:3000/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)  // Перетворюємо дані в JSON
+            });
+    
+            if (response.ok) {
+                alert("Booking successfully submitted!");
+            } else {
+                alert("Error submitting booking");
+            }
+        } catch (error) {
+            console.error("Error submitting booking:", error);
+        }
+    });
+    </script>  
+</body>
+</html>
+
+
+
+

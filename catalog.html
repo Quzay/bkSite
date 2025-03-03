@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="content">
+          <header>
+              <div id="logo">
+                 <a href="file:///D:/%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC/BookingSite//index.html" title="На головну">
+                     <img src="img/Main_logo.ico" title="HotelBooking.com" alt="HotelBooking.com">
+                     <span>HotelBooking</span>
+                    </a>
+              </div>
+               <div id="about">
+                 <a href=""title="Взанти більше про реклами">Реклама</a>
+                  <a href=""title="Напиши нам">Зворотній зв'язок</a>
+               </div>
+             <div id="reg_auth">
+                   <a href=""title="Зайти в кабінет користувача">
+                     <div id="btn">
+                         Вхід
+                     </div>
+                  </a>
+                 <a href=""title="Зареєструватись на сайті">
+                      <div id="btn">
+                            Реєстрація
+                      </div>
+                    </a>
+                </div>
+            </header>
+            <nav>
+                <a href="">Hotels</a>
+                <a href="">Test1</a>
+                <a href="">Test2</a>
+                <a href="">Test3</a>
+                <a href="">Test4</a>
+                <div id="search">
+                    <span>Пошук</span>
+                    <i class="fas fa-search"></i>
+                </div>
+            </nav>
+        </div>
+        <div class="sort-container">
+            <span class="sort-label">Sort by</span>
+            <div class="sort-buttons">
+                <button class="sort-btn" onclick="sortHotels('default')">Best match</button>
+                <button class="sort-btn" onclick="sortHotels('asc')">Lowest price</button>
+                <button class="sort-btn" onclick="sortHotels('desc')">Highest price</button>
+                <button class="sort-btn hot-deals" onclick="sortHotels('default')">Hot Deals!</button>
+
+            </div>
+        </div>
+        
+        <div class="card-container">
+            <div class="FirstCard">
+                <a href="FirstHotel.html">
+                    <img src="img/apartment.jpg" alt="Apartment">
+                    <div class="card-content">
+                        <div class="title">Hotel на вул. Ставропігійській</div>
+                        <div class="location">Lviv</div>
+                        <p>Безкоштовний WiFi, ідеально для довготривалого проживання.</p>
+                        <div>
+                        <span class="old-price">39$</span> <span class="price">30$</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="SecondCard">
+                <a href="FirstHotel.html">
+                    <img src="img/apartment.jpg" alt="Apartment">
+                    <div class="card-content">
+                        <div class="title">Hotel2 на вул. Ставропігійській</div>
+                        <div class="location">Lviv</div>
+                        <p>Безкоштовний WiFi, ідеально для довготривалого проживання.</p>
+                        <div>
+                            <span class="old-price">60$</span> <span class="price">40$</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="ThirdCard">
+                <a href="FirstHotel.html">
+                    <img src="img/apartment.jpg" alt="Apartment">
+                    <div class="card-content">
+                        <div class="title">Hotel3 на вул. Ставропігійській</div>
+                        <div class="location">Lviv</div>
+                        <p>Безкоштовний WiFi, ідеально для довготривалого проживання.</p>
+                        <div>
+                            <span class="old-price">100$</span> <span class="price">85$</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="FourthCard">
+                <a href="FirstHotel.html">
+                    <img src="img/apartment.jpg" alt="Apartment">
+                    <div class="card-content">
+                        <div class="title">Hotel4 на вул. Ставропігійській</div>
+                        <div class="location">Lviv</div>
+                        <p>Безкоштовний WiFi, ідеально для довготривалого проживання.</p>
+                        <div>
+                            <span class="old-price">50$</span> <span class="price">38$</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="FifthCard">
+                <a href="FirstHotel.html">
+                    <img src="img/apartment.jpg" alt="Apartment">
+                    <div class="card-content">
+                        <div class="title">Hotel5 на вул. Ставропігійській</div>
+                        <div class="location">Lviv</div>
+                        <p>Безкоштовний WiFi, ідеально для довготривалого проживання.</p>
+                        <div>
+                            <span class="old-price">70$</span> <span class="price">64$</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="SixthCard">
+                <a href="FirstHotel.html">
+                    <img src="img/apartment.jpg" alt="Apartment">
+                    <div class="card-content">
+                        <div class="title">Hotel6 на вул. Ставропігійській</div>
+                        <div class="location">Kyiv</div>
+                        <p>Безкоштовний WiFi, ідеально для довготривалого проживання.</p>
+                        <div>
+                            <span class="old-price">32$</span> <span class="price">16$</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="SeventhCard">
+                <a href="FirstHotel.html">
+                    <img src="img/apartment.jpg" alt="Apartment">
+                    <div class="card-content">
+                        <div class="title">Hotel7 на вул. Ставропігійській</div>
+                        <div class="location">Kyiv</div>
+                        <p>Безкоштовний WiFi, ідеально для довготривалого проживання.</p>
+                        <div>
+                            <span class="old-price">62$</span> <span class="price">45$</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="EighthCard">
+                <a href="FirstHotel.html">
+                    <img src="img/apartment.jpg" alt="Apartment">
+                    <div class="card-content">
+                        <div class="title">Hotel8 на вул. Ставропігійській</div>
+                        <div class="location">Kyiv</div>
+                        <p>Безкоштовний WiFi, ідеально для довготривалого проживання.</p>
+                        <div>
+                            <span class="old-price">54$</span> <span class="price">35$</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="NinethCard">
+                <a href="FirstHotel.html">
+                    <img src="img/apartment.jpg" alt="Apartment">
+                    <div class="card-content">
+                        <div class="title">Hotel9 на вул. Ставропігійській</div>
+                        <div class="location">Kyiv</div>
+                        <p>Безкоштовний WiFi, ідеально для довготривалого проживання.</p>
+                        <div>
+                            <span class="old-price">48$</span> <span class="price">27$</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="TenthCard">
+                <a href="FirstHotel.html">
+                    <img src="img/apartment.jpg" alt="Apartment">
+                    <div class="card-content">
+                        <div class="title">Hotel10 на вул. Ставропігійській</div>
+                        <div class="location">Kyiv</div>
+                        <p>Безкоштовний WiFi, ідеально для довготривалого проживання.</p>
+                        <div>
+                            <span class="old-price">120$</span> <span class="price">98$</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <footer>
+            <div id="site_name">
+                <span>HotelBooking</span> - найкраще бронювання
+            </div>
+            <div id="clear"></div>
+            <div id="fotter_menu">
+                <a href="" title="Більше про нас">Більше про нас</a>
+                <a href="" title="Підтримати проект">Підтримати проект</a>
+                <a href="" title="Написати лист">Написати лист</a>
+            </div>
+            <div id="rights">
+                <a href="">Всі права захищені &copy;2025</a>
+            </div>
+            <div id="social">
+                <a href="" title="Група телеграм"><i class="fa-brands fa-telegram" id="soc"></i></a>
+                <a href="" title="Група фейсбук"><i class="fa-brands fa-facebook"  id="soc"></i></a>
+                <a href="" title="Твіттер"><i class="fa-brands fa-twitter  "id="soc"></i></a>
+                <a href="" title="Ми в ютубі"><i class="fa-brands fa-youtube"  id="soc"></i></a>
+            </div>
+        </footer>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        $(document).scroll(function() {
+            if ($(document).scrollTop() > $('header').height() + 10) {
+                $('nav').addClass('fixed');
+            } else {
+                $('nav').removeClass('fixed');
+            }
+        });
+    </script>
+    <script>
+        let originalOrder = []; 
+    
+        $(document).ready(function() {
+            originalOrder = $(".card-container > div").toArray();
+        });
+    
+        function sortHotels(order) {
+            let hotels = $(".card-container > div").toArray();
+    
+            if (order === "default") {
+                $(".card-container").html(originalOrder); 
+                return;
+            }
+    
+            hotels.sort(function(a, b) {
+                let priceA = parseFloat($(a).find(".price").text().replace("$", ""));
+                let priceB = parseFloat($(b).find(".price").text().replace("$", ""));
+    
+                if (order === "asc") return priceA - priceB;
+                if (order === "desc") return priceB - priceA;
+            });
+    
+            $(".card-container").html(hotels);
+        }
+    </script>
+    
+    <script>
+            document.addEventListener("DOMContentLoaded", function () {
+        if (window.location.href.includes("catalog.html")) {
+            const selectedCity = localStorage.getItem("selectedCity");
+
+            if (selectedCity) {
+                const hotelCards = document.querySelectorAll(".card-container > div");
+
+                hotelCards.forEach(card => {
+                    const locationElement = card.querySelector(".location");
+
+                    if (locationElement) {
+                        const hotelCity = locationElement.textContent.trim().toLowerCase();
+                        const selectedCityLower = selectedCity.trim().toLowerCase();
+
+                       
+                        if (hotelCity === selectedCityLower) {
+                            card.style.display = "block"; 
+                        } else {
+                            card.style.display = "none"; 
+                        }
+                    }
+                });
+            }
+        }
+    });
+    </script>
+    <script>console.log(localStorage.getItem("selectedCity"));</script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
