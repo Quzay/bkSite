@@ -44,48 +44,43 @@ app.listen(port, () => {
 
 
 
-app.get("/get-hotel/:id", async (req, res) => {
-  const hotelId = req.params.id;
-  console.log("Отримання готелю з ID:", hotelId);
+// app.get("/get-hotel/:id", async (req, res) => {
+//   const hotelId = req.params.id;
+//   console.log("Отримання готелю з ID:", hotelId);
 
-  try {
-      const result = await db.query(
-          "SELECT hotel_name, price_per_night FROM hotels WHERE id = $1",
-          [hotelId]
-      );
-      console.log("Результат запиту:", result.rows);
+//   try {
+//       const result = await db.query(
+//           "SELECT hotel_name, price_per_night FROM hotels WHERE id = $1",
+//           [hotelId]
+//       );
+//       console.log("Результат запиту:", result.rows);
 
-      if (result.rows.length > 0) {
-          res.json(result.rows[0]);
-      } else {
-          res.status(404).json({ error: "Готель не знайдено" });
-      }
-  } catch (error) {
-      console.error("Помилка отримання готелю:", error); // Тут буде детальна помилка
-      res.status(500).json({ error: "Помилка сервера" });
-  }
-});
-
-// app.post('/log-view', (req, res) => {
-//   res.send("Маршрут /log-view працює, але він приймає лише POST-запити.");
+//       if (result.rows.length > 0) {
+//           res.json(result.rows[0]);
+//       } else {
+//           res.status(404).json({ error: "Готель не знайдено" });
+//       }
+//   } catch (error) {
+//       console.error("Помилка отримання готелю:", error); // Тут буде детальна помилка
+//       res.status(500).json({ error: "Помилка сервера" });
+//   }
 // });
 
 
 
+
 app.post('/log-view', async (req, res) => {
-  console.log("Отриманий body:", req.body); // Додано лог
+  console.log("Отриманий body:", req.body); 
   try {
-      const { hotel_id } = req.body;
+      const { hotel_id} = req.body;
       if (!hotel_id) {
           return res.status(400).json({ error: "hotel_id is required" });
       }
 
       const query = `
-        INSERT INTO bookings (hotel_id, hotel_name, price_per_night, booking_date)
-        SELECT id, hotel_name, price_per_night, NOW()
-        FROM hotels
-        WHERE id = $1
-        RETURNING *;
+        INSERT INTO bookings (hotel_id,  booking_date)
+        VALUES ($1, NOW())
+        RETURNING *
       `;
       const result = await db.query(query, [hotel_id]);
 
